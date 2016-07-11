@@ -1,8 +1,6 @@
 # IBM MobileFirst Platform for Android Bluelist Sample App
 The sample uses the Cloudant NoSQL DB, Mobile Client Access, and IBM Push Notifications services.
 
-**ATTENTION**: This sample has been deprecated and is no longer supported. Please see [Bluemix Mobile Services](https://github.com/ibm-bluemix-mobile-services) for Mobile Client Access and IBM Push Notifications samples. See [Cloudant Sync](https://github.com/cloudant/sync-android) to learn more about saving JSON data on Bluemix using the Cloudant service.
-
 ### Downloading the samples
 Clone the sample from Github with the following command:
 
