@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BlueList</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_launch_screen">LaunchScreen</string>
+    <string name="BluemixLogo">bluemix_logo.png</string>
+    <string name="Copyright">Copyright © 2015 IBM. All rights reserved.</string>
+    <string name="Title">BlueList</string>
+    <string name="medium">Medium</string>
+    <string name="all">All</string>
+    <string name="high">High</string>
+    <string name="todo">New Todo</string>
+    <string name="Done">Done</string>
+    <string name="NewTodo">New Todo</string>
+    <string name="Priority">priority</string>
+    <string name="AddButton">Add Todo Button</string>
+    <string name="facebook_app_id"></string>
+
+    </resources>

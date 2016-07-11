@@ -1,0 +1,78 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ibm.bluelist">
+
+    <!-- Permissions to Enable Push, Facebook, and Google Auth -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.ibm.clientsdk.android.app.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+
+    <application
+        android:name="BlueListApplication"
+        android:label="@string/app_name"
+        android:icon="@mipmap/logo"
+        android:allowBackup="true">
+        <activity
+            android:name="com.ibm.bluelist.SplashActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- Push Settings, Notification Intent -->
+            <intent-filter>
+                <action android:name="com.ibm.mobilefirstplatform.clientsdk.android.app.IBMPushNotification" />
+
+                <category  android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!-- Push Settings End -->
+        </activity>
+
+        <!-- Facebook Auth settings-->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"
+            />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges= "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="@string/app_name"
+            />
+        <!-- Facebook Settings End -->
+
+        <activity
+            android:name="com.ibm.bluelist.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/IBMCustomTheme"
+            />
+
+        <!-- More Push Settings, Add GCM Intent Service and intent-filters for RECEIVE and REGISTRATION of notifications -->
+        <service android:name="com.ibm.mobilefirstplatform.clientsdk.android.push.api.MFPPushIntentService" />
+
+        <receiver
+            android:name="com.ibm.mobilefirstplatform.clientsdk.android.push.internal.MFPPushBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.ibm.mobilefirstplatform.clientsdk.android.app" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="com.ibm.mobilefirstplatform.clientsdk.android.app" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>
