@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.ibm.bluelist.MainActivity">
+<item
+        android:id="@+id/IBMPushSwitch"
+        android:title="Enable Push"
+        app:showAsAction="always"
+        app:actionLayout="@layout/ibm_push_switch"
+        android:onClick="togglePush"
+        />
+</menu>

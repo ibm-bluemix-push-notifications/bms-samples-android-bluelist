@@ -1,0 +1,11 @@
+applications:
+- name: mobilefirst
+  host: mobilefirst
+  disk_quota: 1024M
+  command: node app.js
+  path: .
+  domain: mybluemix.net
+  instances: 1
+  memory: 128M
+  env:
+   ENABLE_ANALYTICS_SDK: 'no'
